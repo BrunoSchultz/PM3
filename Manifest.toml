@@ -2,7 +2,7 @@
 
 julia_version = "1.12.5"
 manifest_format = "2.0"
-project_hash = "4b1cb8cfb0f3c3c9a753c3e48efce3f6a2260bf6"
+project_hash = "b6a6175ae0b3e02672041832c59d737226d8576b"
 
 [[deps.AbstractFFTs]]
 deps = ["LinearAlgebra"]
@@ -17,6 +17,12 @@ version = "1.5.0"
     [deps.AbstractFFTs.weakdeps]
     ChainRulesCore = "d360d2e6-b24c-11e9-a2a3-2a2ae2dbcce4"
     Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[[deps.ArgParse]]
+deps = ["Logging", "TextWrap"]
+git-tree-sha1 = "22cf435ac22956a7b45b0168abbc871176e7eecc"
+uuid = "c7e460c6-2fb9-53a9-8c5b-16f535851c63"
+version = "1.2.0"
 
 [[deps.ArgTools]]
 uuid = "0dad84c5-d112-42e6-8d28-ef12dabb789f"
@@ -219,7 +225,7 @@ uuid = "bac558e1-5e72-5ebc-8fee-abe8a469f55d"
 version = "1.8.1"
 
 [[deps.PM3]]
-deps = ["AbstractFFTs", "FFTW", "LinearAlgebra", "StaticArrays", "StructArrays", "Test"]
+deps = ["AbstractFFTs", "BenchmarkTools", "FFTW", "LinearAlgebra", "StaticArrays", "StructArrays", "Test"]
 path = "."
 uuid = "664f5f79-c4c0-47d6-a55d-9acbbbb82c06"
 version = "0.1.0"
@@ -377,6 +383,11 @@ version = "1.10.0"
 deps = ["InteractiveUtils", "Logging", "Random", "Serialization"]
 uuid = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 version = "1.11.0"
+
+[[deps.TextWrap]]
+git-tree-sha1 = "43044b737fa70bc12f6105061d3da38f881a3e3c"
+uuid = "b718987f-49a8-5099-9789-dcd902bef87d"
+version = "1.0.2"
 
 [[deps.UUIDs]]
 deps = ["Random", "SHA"]

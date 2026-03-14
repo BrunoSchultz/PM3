@@ -6,7 +6,7 @@ struct Cosmology{T <: AbstractFloat}
     H0::T
 end
 
-# Defaults to Float64, but you can call ΛCDM(Float32) for GPU runs
+# Defaults to Float64, but you can call ΛCDM(Float32)
 function ΛCDM(::Type{T}=Float64) where {T <: AbstractFloat}
     return Cosmology{T}(
         T(0.315),   
