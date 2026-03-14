@@ -36,10 +36,10 @@ During a simulation run, the engine loop repeatedly calls four primary functions
 
 1.  **`assign_density!(particles, sim)`**
     * Clears the `density_grid` and maps every particle's mass onto it.
-    * Uses Cloud-in-Cell (CIC) interpolation to distribute a particle's mass across the 8 nearest grid cells based on fractional distances (`dr_x`, `dl_x`, etc.), strictly enforcing periodic boundaries using the modulo operator.
+    * Uses Cloud-in-Cell (CIC) interpolation to distribute a particle's mass across the 8 nearest grid cells based on fractional distances (`dr_x`, `dl_x`, etc.), enforcing periodic boundaries.
 2.  **`solve_poisson!(sim, C, a)`**
     * Converts the real-space density grid into a gravitational potential grid.
-    * It executes a forward FFT (`plan_forward`) to move the density into k-space. Then, `apply_greens_function!` multiplies the k-grid by a cosmological prefactor and the Green's function (inversely proportional to the squared wavenumber $K$). Finally, an inverse FFT (`plan_backward`) transforms the grid back to real space.
+    * It executes a forward FFT (`plan_forward`) to move the density into k-space. Then, `apply_greens_function!` multiplies the k-grid the Green's function. Finally, an inverse FFT (`plan_backward`) transforms the grid back to real space.
 3.  **`calculate_forces!(particles, sim)`**
     * Computes the $X$, $Y$, and $Z$ forces acting on each particle.
     * It calculates the gradient of the potential grid using finite differences (`force_x`, `force_y`, `force_z`) and uses the exact same CIC fractional weights (`w000`, `w100`, etc.) to interpolate those grid forces back onto the individual particles.
