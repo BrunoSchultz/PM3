@@ -19,7 +19,7 @@ function calculate_forces!(particles, sim::Simulation)
     fill!(particles.fy, 0.)
     fill!(particles.fz, 0.)
 
-    @inbounds for i in eachindex(particles)
+    @inbounds Threads.@threads for i in eachindex(particles)
         px = particles.x[i]
         py = particles.y[i]
         pz = particles.z[i]

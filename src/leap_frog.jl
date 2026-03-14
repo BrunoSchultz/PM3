@@ -9,7 +9,7 @@ function step_leapfrog!(particles, sim, C, a, da)
     # Drift is evaluated at the half-step (a_n+1/2)
     drift_factor = da / (a_half^2) * f(a_half, C) 
 
-    @inbounds for i in eachindex(particles)
+    @inbounds Threads.@threads for i in eachindex(particles)
         # KICK
         particles.vx[i] += particles.fx[i] * kick_factor
         particles.vy[i] += particles.fy[i] * kick_factor

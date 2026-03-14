@@ -24,7 +24,7 @@ function plot_slice(particles, N_cells; slice_center = N_cells/2, thickness = 5.
         markersize = 1.5,          # Tiny dots
         markerstrokewidth = 0,     # No borders on the dots
         color = :black, 
-        alpha = 0.4,               # 40% opacity (makes dense regions look darker!)
+        alpha = 0.1,               # 10% opacity (makes dense regions look darker!)
         legend = false,            # No distracting legend
         aspect_ratio = 1.0,        # Keep the box perfectly square
         xlims = (0, N_cells),      # Lock the axes to the box size
@@ -67,9 +67,9 @@ for i in 1:N_parts
     particles.fz[i] = 0.0
 end
 
-a_start = 0.01
+a_start = 0.002
 a_end = 1.0
-steps = 100
+steps = 500
 da = (a_end - a_start) / steps
 
 # The Engine (Silenced for benchmarking)

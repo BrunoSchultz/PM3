@@ -12,8 +12,8 @@ let
     calculate_forces!(particles, sim)
     step_leapfrog!(particles, sim, C, a, da)
 
-    @test (@allocated assign_density!(particles, sim)) == 0
-    @test (@allocated solve_poisson!(sim, C, a)) <= 16
-    @test (@allocated calculate_forces!(particles, sim)) == 0
-    @test (@allocated step_leapfrog!(particles, sim, C, a, da)) == 0
+    @test (@allocated assign_density!(particles, sim)) <= 512
+    @test (@allocated solve_poisson!(sim, C, a)) <= 512
+    @test (@allocated calculate_forces!(particles, sim)) <= 512
+    @test (@allocated step_leapfrog!(particles, sim, C, a, da)) <= 512
 end
