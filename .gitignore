@@ -1,2 +1,30 @@
 deps/
 .DS_Store
+# Julia compiled files and environments
+*.jl.cov
+*.jl.*.cov
+*.jl.mem
+/Manifest.toml 
+
+# PM3 Simulation Data (Do NOT upload these to GitHub!)
+*.jls
+*.bin
+*.dat
+
+# Generated Plots and Images
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.pdf
+*.gif
+*.mp4
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
