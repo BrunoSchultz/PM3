@@ -79,8 +79,6 @@ If you've never used Julia before, follow these steps to get the environment set
 
 The workflow is split into two parts: running the computation (`run.jl`) and generating visual plots (`plot.jl`). 
 
-**Important:** You must use the `--project=.` flag when running these scripts from the terminal so that Julia knows to use the local environment you just installed!
-
 ### 1. The Compute Script (`run.jl`)
 This script initializes the universe, runs the time integration, and saves the final raw data to a `.jls` binary file. The default simulation runs with 256 cells and 10 million particles, which consumes roughly 16 GB of RAM.
 
