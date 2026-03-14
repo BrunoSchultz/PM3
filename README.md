@@ -59,7 +59,7 @@ If you've never used Julia before, follow these steps to get the environment set
 **Step 2: Clone the Repository**
 * Open your terminal and download the codebase:
     ```bash
-    git clone [https://github.com/yourusername/PM3.git](https://github.com/yourusername/PM3.git)
+    git clone https://github.com/BrunoSchultz/PM3
     cd PM3
     ```
 
