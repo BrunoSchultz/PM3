@@ -22,7 +22,7 @@ The **Particle-Mesh (PM)** method solves this by approximating the gravitational
 
 ---
 
-## Code Architecture & Execution Order
+## Code Structure
 
 My codebase revolves around a few core structures and a straightforward execution loop. 
 
